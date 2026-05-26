@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sandi Colic - Tutti i Progetti</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; line-height: 1.6; color: #333; }
+        .header { background: #ff6600; color: white; padding: 30px 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .nav { background: #ff8533; padding: 15px 20px; text-align: center; overflow-x: auto; }
+        .nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; cursor: pointer; display: inline-block; white-space: nowrap; }
+        .nav a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .section { background: white; padding: 30px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section h2 { color: #ff6600; border-bottom: 3px solid #ff6600; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8em; }
+        .section h3 { color: #ff6600; margin-top: 20px; margin-bottom: 10px; font-size: 1.3em; }
+        .section h4 { color: #ff8533; margin-top: 15px; margin-bottom: 8px; }
+        .section p { margin-bottom: 10px; }
+        .section ul, .section ol { margin-left: 20px; margin-bottom: 15px; }
+        .section li { margin-bottom: 5px; }
+        .code-block { background: #f4f4f4; padding: 15px; border-left: 4px solid #ff6600; margin: 15px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9em; line-height: 1.4; }
+        .highlight { background: #fff3e0; padding: 2px 6px; border-radius: 3px; }
+        .link-btn { display: inline-block; padding: 10px 20px; background: #ff6600; color: white; text-decoration: none; border-radius: 4px; margin: 5px 5px 5px 0; }
+        .link-btn:hover { background: #ff8533; }
+        table { width: 100%; border-collapse: collapse; background: white; margin: 15px 0; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        th { background: #fff3e0; color: #ff6600; font-weight: bold; }
+        tr:hover { background: #f9f9f9; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .feature-card { background: #fff3e0; padding: 15px; border-radius: 4px; border-left: 4px solid #ff6600; }
+        .feature-card h4 { color: #ff6600; margin-bottom: 5px; }
+        .footer { background: #ff6600; color: white; padding: 20px; text-align: center; margin-top: 40px; }
+        .hidden { display: none; }
+        .visible { display: block; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portfolio - Sandi Colic</h1>
+        <p>Tutti i Progetti | Lezione 8 maggio 2026</p>
+    </div>
+
+    <div class="nav">
+        <a onclick="showTab('home')">Home</a>
+        <a onclick="showTab('library')">LIBRARY v1.7</a>
+        <a onclick="showTab('crf')">CRF Verification</a>
+        <a onclick="showTab('crud')">CRUD Operations</a>
+        <a onclick="showTab('clients')">Clients Management</a>
+        <a onclick="showTab('auth')">Auth System</a>
+    </div>
+
+    <div class="container">
+        <!-- TAB: HOME -->
+        <div id="home" class="section visible">
+            <h2>Portfolio - Tutti i Progetti</h2>
+            
+            <h3>Benvenuto</h3>
+            <p>Questo portfolio contiene la documentazione completa di tutti i progetti sviluppati durante il corso di programmazione web.</p>
+            
+            <h3>Progetti Sviluppati</h3>
+            <table>
+                <tr>
+                    <th>Progetto</th>
+                    <th>Descrizione</th>
+                    <th>Tecnologie</th>
+                </tr>
+                <tr>
+                    <td><strong>LIBRARY v1.7</strong></td>
+                    <td>Gestione biblioteca con sistema prestiti online</td>
+                    <td>PHP, MySQL, HTML5, CSS3</td>
+                </tr>
+                <tr>
+                    <td><strong>CRF Verification</strong></td>
+                    <td>Sistema verifica Cross-Site Request Forgery</td>
+                    <td>PHP, Security</td>
+                </tr>
+                <tr>
+                    <td><strong>CRUD Operations</strong></td>
+                    <td>Operazioni Create, Read, Update, Delete</td>
+                    <td>PHP, MySQL, HTML5</td>
+                </tr>
+                <tr>
+                    <td><strong>Clients Management</strong></td>
+                    <td>Gestione database clienti</td>
+                    <td>PHP, MySQL, Forms</td>
+                </tr>
+                <tr>
+                    <td><strong>Auth System</strong></td>
+                    <td>Sistema di autenticazione sicuro</td>
+                    <td>PHP, Password Hashing, Sessions</td>
+                </tr>
+            </table>
+
+            <h3>Competenze Generali Dimostrate</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Backend PHP</h4>
+                    <p>Logica di business, gestione sessioni, prepared statements</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Database MySQL</h4>
+                    <p>Design relazionale, normalizzazione, query ottimizzate</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Frontend HTML/CSS</h4>
+                    <p>HTML5 semantico, CSS3 responsive</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Security</h4>
+                    <p>XSS, SQL Injection, CSRF, Password Hashing</p>
+                </div>
+                <div class="feature-card">
+                    <h4>CRUD Operations</h4>
+                    <p>Create, Read, Update, Delete con validazione</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Git & GitHub</h4>
+                    <p>Version control, repository management</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: LIBRARY -->
+        <div id="library" class="section hidden">
+            <h2>LIBRARY v1.7 - Gestione Biblioteca</h2>
+
+            <h3>README</h3>
+            <p><strong>Progetto:</strong> LIBRARY v1.7 - Lezione 8 maggio 2026</p>
+            <p>Un'applicazione web completa per la gestione di una biblioteca comunale con sistema di prestiti online.</p>
+
+            <h3>Descrizione</h3>
+            <p>LIBRARY è un sistema integrato che permette:</p>
+            <ul>
+                <li>Visualizzazione catalogo online di oltre 100 libri con immagini</li>
+                <li>Autenticazione sicura per utenti e amministratori</li>
+                <li>Gestione completa prestiti con 4 stati distinti</li>
+                <li>Calcolo automatico giorni di scadenza</li>
+                <li>Admin panel per gestione totale catalogo</li>
+                <li>Archiviazione immagini libri come BLOB database</li>
+            </ul>
+
+            <h3>Tecnologie Utilizzate</h3>
+            <ul>
+                <li><strong>Backend:</strong> PHP 7.4+</li>
+                <li><strong>Database:</strong> MySQL (2 database: library_auth, colic_db)</li>
+                <li><strong>Frontend:</strong> HTML5, CSS3</li>
+                <li><strong>Server:</strong> XAMPP (Apache)</li>
+            </ul>
+
+            <h3>Credenziali Test</h3>
+            <ul>
+                <li><strong>Admin:</strong> admin / admin</li>
+                <li><strong>Utente:</strong> test / test</li>
+            </ul>
+
+            <h3>Funzionalità Per Utenti</h3>
+            <ul>
+                <li>Visualizzare catalogo 50 libri per pagina</li>
+                <li>Ricerca per titolo e classificazione Dewey</li>
+                <li>Richiedere prestiti libri disponibili</li>
+                <li>Visualizzare prestiti attivi</li>
+                <li>Controllare giorni scadenza</li>
+            </ul>
+
+            <h3>Funzionalità Per Amministratori</h3>
+            <ul>
+                <li>Gestire catalogo (aggiunta, modifica, eliminazione)</li>
+                <li>Caricare immagini libri</li>
+                <li>Approvare/negare richieste prestito</li>
+                <li>Tracciare 4 stati prestito</li>
+                <li>Importare dati da JSON</li>
+            </ul>
+
+            <h3>Technical Report</h3>
+
+            <h4>Architettura Database</h4>
+            <p><strong>library_auth:</strong> Gestione utenti e prestiti</p>
+            <div class="code-block">
+users: id, username (UNIQUE), email (UNIQUE), password (hash), role, created_at
+prestiti: id, user_id (FK), book_isbn, book_title, data_*, durata_giorni, stato (ENUM), created_at
+            </div>
+
+            <p><strong>colic_db:</strong> Catalogo libri ed editori</p>
+            <div class="code-block">
+editori: id, nome, created_at
+libri: id, titolo, autore, anno_pubblicazione, isbn (UNIQUE), editore_id (FK), dewey_class, copie, immagine (LONGBLOB), created_at
+            </div>
+
+            <h4>Ciclo Vita Prestito</h4>
+            <div class="code-block">
+1. RICHIESTA: Utente richiede → stato="richiesta", copie rimangono uguali
+2. CONFERMATO: Admin conferma → stato="confermato", copie--
+3. RITIRATO: Admin conferma ritiro → stato="ritirato", inizio conteggio giorni
+4. RESTITUITO: Admin conferma restituzione → stato="restituito", copie++
+            </div>
+
+            <h4>Protezioni Sicurezza</h4>
+            <ul>
+                <li><strong>XSS:</strong> Funzione h() per sanitizzare output</li>
+                <li><strong>SQL Injection:</strong> Prepared statements con bind_param()</li>
+                <li><strong>Password:</strong> password_hash() e password_verify()</li>
+                <li><strong>Session:</strong> session_regenerate_id() dopo login</li>
+                <li><strong>Authorization:</strong> check_admin() per pagine riservate</li>
+            </ul>
+
+            <h4>Competenze Dimostrate</h4>
+            <ul>
+                <li>Autenticazione e gestione sessioni</li>
+                <li>Design database relazionali</li>
+                <li>CRUD operations complete</li>
+                <li>Gestione file (JSON, BLOB)</li>
+                <li>HTML/CSS responsive</li>
+                <li>Logica business complessa</li>
+                <li>Best practices sicurezza</li>
+            </ul>
+        </div>
+
+        <!-- TAB: CRF -->
+        <div id="crf" class="section hidden">
+            <h2>CRF Verification - Cross-Site Request Forgery</h2>
+
+            <h3>README</h3>
+            <p><strong>Progetto:</strong> CRF Verification System</p>
+            <p>Implementazione di meccanismi di protezione contro attacchi Cross-Site Request Forgery.</p>
+
+            <h3>Descrizione</h3>
+            <p>Un sistema che implementa token CSRF per proteggere le azioni critiche dell'applicazione.</p>
+
+            <h3>Funzionalità</h3>
+            <ul>
+                <li>Generazione token CSRF univoci</li>
+                <li>Validazione token per richieste POST</li>
+                <li>Protezione form critiche</li>
+                <li>Gestione scadenza token</li>
+            </ul>
+
+            <h3>Technical Report</h3>
+
+            <h4>Cos'è CSRF</h4>
+            <p>Cross-Site Request Forgery (CSRF) è un attacco che forza l'utente autenticato a eseguire azioni non volute su un'altra applicazione.</p>
+
+            <h4>Implementazione</h4>
+            <div class="code-block">
+// Generazione token CSRF
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Validazione token
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
+        die('CSRF token validation failed');
+    }
+}
+            </div>
+
+            <h4>Come Usare</h4>
+            <ol>
+                <li>Generare token all'inizio della sessione</li>
+                <li>Includerlo in ogni form come hidden field</li>
+                <li>Validare il token per ogni richiesta POST</li>
+                <li>Rigenerare token dopo login critico</li>
+            </ol>
+
+            <h4>Protezione Implementata</h4>
+            <ul>
+                <li>Token univoco per sessione</li>
+                <li>Validazione con hash_equals() (timing attack safe)</li>
+                <li>Rigenerazione token dopo azioni critiche</li>
+                <li>Scadenza token dopo timeout sessione</li>
+            </ul>
+        </div>
+
+        <!-- TAB: CRUD -->
+        <div id="crud" class="section hidden">
+            <h2>CRUD Operations - Create Read Update Delete</h2>
+
+            <h3>README</h3>
+            <p><strong>Progetto:</strong> CRUD Operations System</p>
+            <p>Implementazione completa di operazioni Create, Read, Update, Delete con validazione e sicurezza.</p>
+
+            <h3>Descrizione</h3>
+            <p>Un sistema per gestire dati con operazioni CRUD complete (Create, Read, Update, Delete).</p>
+
+            <h3>Operazioni Implementate</h3>
+            <ul>
+                <li><strong>CREATE:</strong> Inserimento nuovi record con validazione</li>
+                <li><strong>READ:</strong> Lettura record con filtri e paginazione</li>
+                <li><strong>UPDATE:</strong> Modifica record con validazione cambamenti</li>
+                <li><strong>DELETE:</strong> Eliminazione record con conferma</li>
+            </ul>
+
+            <h3>Technical Report</h3>
+
+            <h4>Struttura Database</h4>
+            <div class="code-block">
+CREATE TABLE records (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+            </div>
+
+            <h4>CREATE - Inserimento Dati</h4>
+            <div class="code-block">
+$sql = "INSERT INTO records (name, email, phone) VALUES (?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('sss', $name, $email, $phone);
+$stmt->execute();
+            </div>
+
+            <h4>READ - Lettura Dati</h4>
+            <div class="code-block">
+$sql = "SELECT * FROM records WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$record = $result->fetch_assoc();
+            </div>
+
+            <h4>UPDATE - Modifica Dati</h4>
+            <div class="code-block">
+$sql = "UPDATE records SET name = ?, email = ?, phone = ? WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('sssi', $name, $email, $phone, $id);
+$stmt->execute();
+            </div>
+
+            <h4>DELETE - Eliminazione Dati</h4>
+            <div class="code-block">
+$sql = "DELETE FROM records WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+            </div>
+
+            <h4>Protezioni Implementate</h4>
+            <ul>
+                <li>Prepared statements per tutte le query</li>
+                <li>Validazione input su CREATE e UPDATE</li>
+                <li>Protezione XSS con h() function</li>
+                <li>Gestione errori completa</li>
+                <li>Conferma prima DELETE</li>
+            </ul>
+        </div>
+
+        <!-- TAB: CLIENTS -->
+        <div id="clients" class="section hidden">
+            <h2>Clients Management - Gestione Clienti</h2>
+
+            <h3>README</h3>
+            <p><strong>Progetto:</strong> Clients Management System</p>
+            <p>Sistema completo di gestione clienti con CRUD operations, ricerca e filtri.</p>
+
+            <h3>Descrizione</h3>
+            <p>Un'applicazione per gestire database clienti con operazioni complete e ricerca avanzata.</p>
+
+            <h3>Funzionalità</h3>
+            <ul>
+                <li>Visualizzare lista clienti con paginazione</li>
+                <li>Aggiungere nuovi clienti con form validato</li>
+                <li>Modificare dati clienti esistenti</li>
+                <li>Eliminare clienti con conferma</li>
+                <li>Ricerca per nome, email, telefono</li>
+                <li>Filtri per status e data</li>
+                <li>Export dati a CSV</li>
+            </ul>
+
+            <h3>Technical Report</h3>
+
+            <h4>Schema Database</h4>
+            <div class="code-block">
+clients table:
+- id (PK)
+- firstname, lastname
+- email (UNIQUE)
+- phone, address
+- city, country, postal_code
+- status (active/inactive)
+- created_at, updated_at
+            </div>
+
+            <h4>Campi Validazione</h4>
+            <ul>
+                <li><strong>Email:</strong> Validazione formato email (filter_var)</li>
+                <li><strong>Phone:</strong> Validazione numero telefono</li>
+                <li><strong>Name:</strong> Stringa 2-100 caratteri</li>
+                <li><strong>Address:</strong> Stringa opzionale</li>
+            </ul>
+
+            <h4>Ricerca e Filtri</h4>
+            <div class="code-block">
+WHERE firstname LIKE ? OR lastname LIKE ? OR email LIKE ?
+ORDER BY created_at DESC
+LIMIT ? OFFSET ?
+            </div>
+
+            <h4>Protezioni Implementate</h4>
+            <ul>
+                <li>Prepared statements per tutte query</li>
+                <li>Validazione form lato server</li>
+                <li>Sanitizzazione XSS output</li>
+                <li>Gestione errori database</li>
+            </ul>
+        </div>
+
+        <!-- TAB: AUTH -->
+        <div id="auth" class="section hidden">
+            <h2>Auth System - Sistema Autenticazione</h2>
+
+            <h3>README</h3>
+            <p><strong>Progetto:</strong> Auth System - Autenticazione Sicura</p>
+            <p>Implementazione completa di sistema autenticazione con gestione sessioni e password hashing.</p>
+
+            <h3>Descrizione</h3>
+            <p>Un sistema di autenticazione professionale con login, registrazione e gestione sessioni sicure.</p>
+
+            <h3>Funzionalità</h3>
+            <ul>
+                <li>Registrazione utenti con validazione</li>
+                <li>Login con email o username</li>
+                <li>Password hashing con password_hash()</li>
+                <li>Gestione sessioni sicure</li>
+                <li>Logout con distruzione sessione</li>
+                <li>Remember me (optional)</li>
+                <li>Reset password</li>
+            </ul>
+
+            <h3>Technical Report</h3>
+
+            <h4>Schema Database</h4>
+            <div class="code-block">
+users table:
+- id (PK)
+- username (UNIQUE)
+- email (UNIQUE)
+- password (hash)
+- role (user/admin)
+- is_active (boolean)
+- created_at, updated_at
+            </div>
+
+            <h4>Password Hashing</h4>
+            <div class="code-block">
+// Hashing password
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+// Verifying password
+if (password_verify($password, $password_hash)) {
+    // Password correct
+}
+            </div>
+
+            <h4>Session Management</h4>
+            <div class="code-block">
+// Login
+session_start();
+session_regenerate_id(true);
+$_SESSION['user_id'] = $user['id'];
+$_SESSION['username'] = $user['username'];
+$_SESSION['role'] = $user['role'];
+
+// Logout
+session_destroy();
+            </div>
+
+            <h4>Protezioni Sicurezza</h4>
+            <ul>
+                <li><strong>Password:</strong> password_hash() bcrypt hashing</li>
+                <li><strong>Session:</strong> session_regenerate_id() dopo login</li>
+                <li><strong>CSRF:</strong> Token CSRF su form login</li>
+                <li><strong>XSS:</strong> Sanitizzazione output</li>
+                <li><strong>Brute Force:</strong> Limitazione tentativi login</li>
+                <li><strong>Email:</strong> Validazione formato email</li>
+                <li><strong>Password:</strong> Requisiti minimo 8 caratteri</li>
+            </ul>
+
+            <h4>Validazione Registrazione</h4>
+            <ul>
+                <li>Username: 3-50 caratteri, alfanumerici</li>
+                <li>Email: Formato valido, UNIQUE nel database</li>
+                <li>Password: Minimo 8 caratteri, 1 maiuscola, 1 numero</li>
+                <li>Conferma password: Match con password</li>
+            </ul>
+
+            <h4>Validazione Login</h4>
+            <ul>
+                <li>Username/Email: Obbligatorio</li>
+                <li>Password: Obbligatoria</li>
+                <li>Verifica credenziali nel database</li>
+                <li>Controllo utente attivo (is_active)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Portfolio - Sandi Colic | Tutti i Progetti</p>
+        <p style="font-size: 0.9em; margin-top: 10px;">Lezione 8 maggio 2026 | Programmazione Web</p>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => {
+                s.classList.remove('visible');
+                s.classList.add('hidden');
+            });
+            document.getElementById(tabName).classList.remove('hidden');
+            document.getElementById(tabName).classList.add('visible');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
